@@ -2,7 +2,11 @@
 #####################################################
 ## Please do not remove lines 5 and 6 - thanks! 🙂 ##
 #####################################################
-/src/buttons.js
+
+*buttons.js
+
+node_modules
+
 
 *.sketch
 *.fig
