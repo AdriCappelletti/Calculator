@@ -10,4 +10,4 @@ This proyect brings a fully functional calculator made with:
   <li>CSS3</li>
   <li>Vanila JS</li>  
 </ul>
-It was inspired in the <a href="https://www.frontendmentor.io/challenges">frontEndMentor</a> design.
+It was inspired by the <a href="https://www.frontendmentor.io/challenges">frontEndMentor</a> design.
