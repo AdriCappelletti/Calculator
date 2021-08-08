@@ -1,7 +1,5 @@
 # Frontend Mentor - Calculator app
 
-![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)
-
 ## Welcome! 👋
 
 This proyect brings a fully functional calculator made with:
@@ -11,3 +9,7 @@ This proyect brings a fully functional calculator made with:
   <li>Vanila JS</li>  
 </ul>
 It was inspired by the <a href="https://www.frontendmentor.io/challenges">frontEndMentor</a> design.
+
+![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)
+
+
