@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style></style>
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="calc-container">
+        <div id="calc-container__header">
+          <div id="header__top-container">
+            <h1>calc</h1>
+          </div>
+          <div id="header__visor-container">
+            <input
+              type="text"
+              name="visor"
+              id="visor-container__visor"
+              placeholder="0"
+              disabled
+            />
+          </div>
+        </div>
+        <div id="calc-body">
+          <div class="calc-body__row">
+            <button class="btn btn--default" value="7">7</button>
+            <button class="btn btn--default" value="8">8</button>
+            <button class="btn btn--default"value="9">9</button>
+            <button class="btn btn--grey" id="delete-btn">DEL</button>
+          </div>
+          <div class="calc-body__row">
+            <button class="btn btn--default" value=4>4</button>
+            <button class="btn btn--default" value=5>5</button>
+            <button class="btn btn--default"value=6>6</button>
+            <button class="btn btn--default" value=+ >+</button>
+          </div>
+          <div class="calc-body__row">
+            <button class="btn btn--default" value=1>1</button>
+            <button class="btn btn--default" value=2>2</button>
+            <button class="btn btn--default" id="tres"value=3>3</button>
+            <button class="btn btn--default" value="-">-</button>
+
+          </div>
+          <div class="calc-body__row">
+            <button class="btn btn--default" value=".">.</button>
+            <button class="btn btn--default" value="0">0</button>
+            <button class="btn btn--default" value="/">/</button>
+            <button class="btn btn--default" value="*">X</button>
+          </div>
+          <div class="calc-body__row">
+            <button class="btn btn--reset" id="reset">Reset</button>
+            <button class="btn btn--grey" id="equal" value="=">=</button>
+
+          </div>
+          <!-- <button class=""></button> -->
+        </div>
+      </div>
+    </div>
+    
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </footer>
+    <script src="./src/app.js" type="module"></script>
+  </body>
+</html>
