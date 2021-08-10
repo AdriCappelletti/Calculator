@@ -1,21 +1,25 @@
-import { getClickedButton, controleButtonClick } from './utility.js';
+import { getClickedButton, controleButtonClick, calculate } from './utility.js';
 
 const $calcBody = document.querySelector('#calc-body');
 const $calcVisor = document.querySelector('#visor-container__visor');
+const $equalBtn = document.querySelector('#equal');
+const $deleteBtn = document.querySelector('#delete');
+const $resetBtn = document.querySelector('#reset');
+// export default writeVisor;
 
 $calcBody.addEventListener('click', (e) => {
   controleButtonClick(getClickedButton(e));
 });
 
-document.querySelector('#delete-btn').addEventListener('click', () => {
+$deleteBtn.addEventListener('click', () => {
   $calcVisor.value = $calcVisor.value.slice(0, -1);
 });
 
-document.querySelector('#reset').addEventListener('click', () => {
+$resetBtn.addEventListener('click', () => {
   $calcVisor.value = '0';
 });
 
-export const writeVisor = (isResult, data) => {
+const writeVisor = (isResult = false, data) => {
   if (isResult) {
     $calcVisor.value = '';
   }
@@ -24,7 +28,14 @@ export const writeVisor = (isResult, data) => {
     : ($calcVisor.value += data);
 };
 
-export const getVisorValue = () => $calcVisor.value;
+export default writeVisor;
+
+const getVisorValue = () => $calcVisor.value;
 document.addEventListener('keypress', (e) => {
-  writeVisor(false, e.key);
+  if (!e.key.match(/[a-z]/)) { writeVisor(false, e.key); }
+});
+
+$equalBtn.addEventListener('click', () => {
+  const result = calculate(getVisorValue());
+  writeVisor(result.isResult, result.result);
 });

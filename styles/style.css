@@ -10,12 +10,26 @@
   --main-bg: hsl(222, 26%, 31%);
   --toogle-keypad-bg: hsl(223, 31%, 20%);
   --visor-bg: hsl(224, 36%, 15%);
+  --btn-general: hsl(45, 7%, 89%);
+
+  /* Default Buttons */
+  --btn-default:  hsl(30, 25%, 89%);
+  --btn-default-shadow: hsl(28, 16%, 65%);
+
+  /* Erase Buttons */
+  --btn-erase: hsl(225, 21%, 49%);
+  --btn-erase-shadow: hsl(224, 28%, 35%);
+
+ /* Reset Button */
+  --btn-reset: hsl(6, 63%, 50%);
+  --btn-reset-shadow: hsl(6, 70%, 34%);
 }
 
 body {
   min-height: 100vh;
   font-family: "spartan", sans-serif;
   background-color: hsl(222, 26%, 31%);
+
   /* border: 1px solid red; */
 }
 
@@ -26,16 +40,20 @@ body {
 
 #main-container {
   width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  /* height: 80vh; */
   /* border: 1px solid blue; */
 }
 
 #calc-container {
-  height: 80%;
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 40%;
   /* border: 1px solid red; */
 }
 
@@ -44,45 +62,74 @@ body {
   flex-direction: column;
   height: 22%;
   color: hsl(0, 0%, 100%);
-  /* border: 1px solid red; */
-  margin-bottom: 50px;
+  /* border: 1px solid red; */ 
 }
 
 #header__top-container {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 #visor-container__visor {
   width: 100%;
   padding: 0.6em;
-  height: 90px;
+  height: 110px;
   font-family: "spartan", sans-serif;
-  font-size: 2em;
+  font-size: 32px;
   color: hsl(0, 0%, 100%);
   background-color: var(--visor-bg);
 }
 
 #calc-body {
-  height: 75%;
+  height: 70%;
+  padding: .4em;
   display: grid;
+  border-radius: 10px;
   background-color: var(--toogle-keypad-bg);
   /* border: 1px solid blue; */
-  }
+}
 
-.calc-body__row{
+.calc-body__row {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.btn{
-  margin:.5em;
-  width: 10%;
- cursor: pointer;
+/* Button section */
+
+.btn {
+  margin:.4em;
+  width: .2em;
+  height: 5rem;
+  /* padding: .5em; */
+  border-radius: .5em;
+  cursor: pointer;
   flex-grow: 1;
-  font-family: 'spartan', sans-serif;
+  font-family: "spartan", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  border: none;
+  
 }
+ 
+
+.btn--default{
+  background-color: var(--btn-default);
+  box-shadow: 0px 2px 1px 1px var(--btn-default-shadow);
+}
+
+.btn--erase{
+  background-color: var(--btn-erase);
+  box-shadow: 0px 2px 1px 1px var(--btn-erase-shadow);
+}
+
+#reset{
+  background-color: var(--btn-reset);
+  box-shadow: 0px 2px 1px 1px var(--btn-reset-shadow);
+
+}
+
+
 
 #visor-container__visor {
   text-align: right;
@@ -91,9 +138,6 @@ body {
 .attribution {
   font-size: 11px;
   text-align: center;
-  height: vh;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

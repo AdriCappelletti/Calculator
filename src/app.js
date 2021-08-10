@@ -1,9 +1,8 @@
-import {writeVisor} from './ui.js'
+import writeVisor from './ui.js';
 
-// document.querySelector('#visor-container__visor').value = '399,981'
+const initiate = () => {
+// La funcion toma false si no esta en modo operación y un numero para mostrar
+  writeVisor(false, 0);
+};
 
-const initiate = ()=>{
-    writeVisor(false, 0)
-}
-
-initiate()
+initiate();

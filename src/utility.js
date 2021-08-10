@@ -1,15 +1,13 @@
-import { writeVisor, getVisorValue } from './ui.js';
+import writeVisor from './ui.js';
 
-let isResult = false;
-
-const calculate = () => {
-  isResult = true;
-  const operation = getVisorValue();
+export const calculate = (operation) => {
+  let isResult = true;
   if (operation.match(/[0-9,.,+,\-,/,*]/g)) {
     const result = eval(operation);
-    writeVisor(isResult, result);
-  } else writeVisor(isResult, 'Invalid operation :)');
+    return { isResult, result };
+  }
   isResult = false;
+  return { isResult, result: 'Invalid operation' };
 };
 
 export const getClickedButton = (e) => {
@@ -20,15 +18,13 @@ export const getClickedButton = (e) => {
 };
 
 export const controleButtonClick = (clickedButton) => {
+  if (!clickedButton) return;
   const buttonValue = clickedButton.value;
-  if (!buttonValue) return;
-  if (buttonValue.match(/[0-9,.,+,\-,/,*]/g)) {
+  const regExp = /[0-9,.,+,\-,/,*]/g;
+  const signRegExp = /[+,\-,/,*]/g;
+  if (buttonValue.match(regExp)) {
+    console.log(buttonValue);
+    const isResult = false;
     writeVisor(isResult, buttonValue);
-  } else if (buttonValue == '=') {
-    calculate();
   }
-};
-
-const writeResult = () => {
-
 };
