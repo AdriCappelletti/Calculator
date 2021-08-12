@@ -8,9 +8,10 @@
 
 :root {
   --main-bg: hsl(222, 26%, 31%);
-  --toogle-keypad-bg: hsl(223, 31%, 20%);
+  --toggle-keypad-bg: hsl(223, 31%, 20%);
   --visor-bg: hsl(224, 36%, 15%);
   --btn-general: hsl(45, 7%, 89%);
+  --header-text-color: hsl(225 ,100%,100%);
 
   /* Default Buttons */
   --btn-default:  hsl(30, 25%, 89%);
@@ -23,12 +24,19 @@
  /* Reset Button */
   --btn-reset: hsl(6, 63%, 50%);
   --btn-reset-shadow: hsl(6, 70%, 34%);
+
+  /* Equal Button */
+  --btn-equal: hsl(6, 63%, 50%);
+  --btn-equal-shadow: hsl(6, 70%, 34%); 
+
+  /* Button Color */
+  --btn-color: hsl(0,0,0);
 }
 
 body {
   min-height: 100vh;
   font-family: "spartan", sans-serif;
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--main-bg);
 
   /* border: 1px solid red; */
 }
@@ -42,6 +50,7 @@ body {
   width: 100%;
   height: 100vh;
   display: flex;
+
   justify-content: center;
   align-items: center;
   /* height: 80vh; */
@@ -60,13 +69,18 @@ body {
 #calc-container__header {
   display: flex;
   flex-direction: column;
-  height: 22%;
+  margin-bottom: 20px;
   color: hsl(0, 0%, 100%);
   /* border: 1px solid red; */ 
 }
 
 #header__top-container {
   margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+  color:var(--header-text-color);
 }
 
 #visor-container__visor {
@@ -84,7 +98,7 @@ body {
   padding: .4em;
   display: grid;
   border-radius: 10px;
-  background-color: var(--toogle-keypad-bg);
+  background-color: var(--toggle-keypad-bg);
   /* border: 1px solid blue; */
 }
 
@@ -101,7 +115,7 @@ body {
   margin:.4em;
   width: .2em;
   height: 5rem;
-  /* padding: .5em; */
+  color: var(--btn-color);
   border-radius: .5em;
   cursor: pointer;
   flex-grow: 1;
@@ -115,24 +129,125 @@ body {
 
 .btn--default{
   background-color: var(--btn-default);
-  box-shadow: 0px 2px 1px 1px var(--btn-default-shadow);
+  box-shadow: 0px 5px 1px 0px var(--btn-default-shadow);
 }
 
 .btn--erase{
   background-color: var(--btn-erase);
-  box-shadow: 0px 2px 1px 1px var(--btn-erase-shadow);
+  box-shadow: 0px 5px 1px 0px var(--btn-erase-shadow);
 }
 
 #reset{
-  background-color: var(--btn-reset);
-  box-shadow: 0px 2px 1px 1px var(--btn-reset-shadow);
+  background-color: var(--btn-erase);
+  box-shadow: 0px 5px 1px 0px var(--btn-erase-shadow);
 
 }
 
+.btn--equal{
+  background-color: var(--btn-equal);
+  box-shadow: 0px 5px 1px 0px var(--btn-equal-shadow);
 
+}
+
+.switch-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 150px;
+}
+
+.switch-controls{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.theme-numbers{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-bottom: 2px;
+  font-size: .6em;
+}
+
+#switch-label{
+  display: inline-block;
+  width: 75px;
+  height: 26px;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+}
+
+#switch-label::after{
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+ position: absolute;
+ top: 3px;
+ left: 3px;
+}
+
+#switch{
+  /* display: none; */
+  width: 100%;
+}
+
+#text-theme{
+  margin-right: 25px;
+  font-size: .8em;
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+
+input[type="range"]::-webkit-slider-runnable-track{
+  background: var(--toggle-keypad-bg);
+
+  padding: .2em;
+  border-radius: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  appearance: none;
+  -webkit-appearance:none;
+  background-color: var(--btn-reset);
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  cursor: pointer;
+}
 
 #visor-container__visor {
   text-align: right;
+}
+
+.uppercase{
+  text-transform: uppercase;
 }
 
 .attribution {

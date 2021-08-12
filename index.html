@@ -23,6 +23,17 @@
         <div id="calc-container__header">
           <div id="header__top-container">
             <h1>calc</h1>
+            <div class="switch-container">
+              <p class="uppercase" id="text-theme">theme</p>
+              <div class="switch-controls">
+                <div class="theme-numbers">
+                  <p>1</p>
+                  <p>2</p>
+                  <p>3</p>
+                </div>
+                  <input type="range" name="" id="switch" min="1" max="3">
+              </div>
+            </div>
           </div>
           <div id="header__visor-container">
             <input
@@ -38,21 +49,20 @@
           <div class="calc-body__row">
             <button class="btn btn--default" value="7">7</button>
             <button class="btn btn--default" value="8">8</button>
-            <button class="btn btn--default"value="9">9</button>
-            <button class="btn btn--erase" id="delete">DEL</button>
+            <button class="btn btn--default" value="9">9</button>
+            <button class="btn btn--erase uppercase" id="delete">del</button>
           </div>
           <div class="calc-body__row">
-            <button class="btn btn--default" value=4>4</button>
-            <button class="btn btn--default" value=5>5</button>
-            <button class="btn btn--default"value=6>6</button>
-            <button class="btn btn--default" value=+ >+</button>
+            <button class="btn btn--default" value="4">4</button>
+            <button class="btn btn--default" value="5">5</button>
+            <button class="btn btn--default" value="6">6</button>
+            <button class="btn btn--default" value="+">+</button>
           </div>
           <div class="calc-body__row">
-            <button class="btn btn--default" value=1>1</button>
-            <button class="btn btn--default" value=2>2</button>
-            <button class="btn btn--default" id="tres"value=3>3</button>
+            <button class="btn btn--default" value="1">1</button>
+            <button class="btn btn--default" value="2">2</button>
+            <button class="btn btn--default" id="tres" value="3">3</button>
             <button class="btn btn--default" value="-">-</button>
-
           </div>
           <div class="calc-body__row">
             <button class="btn btn--default" value=".">.</button>
@@ -61,15 +71,14 @@
             <button class="btn btn--default" value="*">X</button>
           </div>
           <div class="calc-body__row">
-            <button class="btn btn--reset" id="reset">Reset</button>
-            <button class="btn btn--erase" id="equal" value="=">=</button>
-
+            <button class="btn btn--reset uppercase" id="reset">reset</button>
+            <button class="btn btn--equal" id="equal" value="=">=</button>
           </div>
           <!-- <button class=""></button> -->
         </div>
       </div>
     </div>
-    
+
     <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
