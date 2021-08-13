@@ -23,7 +23,6 @@ export const controleButtonClick = (clickedButton) => {
   const regExp = /[0-9,.,+,\-,/,*]/g;
   const signRegExp = /[+,\-,/,*]/g;
   if (buttonValue.match(regExp)) {
-    console.log(buttonValue);
     const isResult = false;
     writeVisor(isResult, buttonValue);
   }
