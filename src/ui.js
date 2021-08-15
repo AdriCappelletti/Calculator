@@ -47,13 +47,8 @@ $equalBtn.addEventListener('click', () => {
   writeVisor(result.isResult, result.result);
 });
 
-const $switchInput = document.querySelector('#switch');
-$switchInput.addEventListener('input', () => {
-  const theme = $switchInput.value;
-  switchTheme(theme);
-});
+// Theme Settings //
 
-// theme settings
 const cssVariables = document.documentElement.style;
 
 const setTheme1 = () => {
@@ -104,7 +99,6 @@ const setTheme2 = () => {
   cssVariables.setProperty('--btn-color', 'hsl(0, 0, 100%)');
 };
 
-// setTheme2();
 const setTheme3 = () => {
   cssVariables.setProperty('--main-bg', 'hsl(268, 75%, 9%)');
   cssVariables.setProperty('--toggle-keypad-bg', ' hsl(268, 71%, 12%)');
@@ -141,3 +135,9 @@ const switchTheme = (theme) => {
       break;
   }
 };
+
+const $switchInput = document.querySelector('#switch');
+$switchInput.addEventListener('input', () => {
+  const theme = $switchInput.value;
+  switchTheme(theme);
+});
