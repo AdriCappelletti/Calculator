@@ -1,4 +1,4 @@
-import { getClickedButton, controleButtonClick, calculate } from './utility.js';
+import { controleButtonClick, calculate } from './utility.js';
 
 const $calcBody = document.querySelector('#calc-body');
 const $calcVisor = document.querySelector('#visor-container__visor');
@@ -6,6 +6,13 @@ const $equalBtn = document.querySelector('#equal');
 const $deleteBtn = document.querySelector('#delete');
 const $resetBtn = document.querySelector('#reset');
 // export default writeVisor;
+
+const getClickedButton = (e) => {
+  const { target } = e;
+  const clickedButton = target.closest('.btn');
+  if (!clickedButton) return null;
+  return clickedButton;
+};
 
 $calcBody.addEventListener('click', (e) => {
   controleButtonClick(getClickedButton(e));
@@ -40,11 +47,9 @@ $equalBtn.addEventListener('click', () => {
   writeVisor(result.isResult, result.result);
 });
 
-const $switchInput = document.querySelector('#switch');
-$switchInput.addEventListener('input', () => {
-  const theme = $switchInput.value;
-  switchTheme(theme);
-});
+// Theme Settings //
+
+const cssVariables = document.documentElement.style;
 
 // theme settings
 const cssVariables = document.documentElement.style;
@@ -54,6 +59,7 @@ const setTheme1 = () => {
   cssVariables.setProperty('--toggle-keypad-bg', '');
   cssVariables.setProperty('--visor-bg', '');
   cssVariables.setProperty('--header-text-color', '');
+
 
   /* Default Buttons */
   cssVariables.setProperty('--btn-default', '');
@@ -83,7 +89,8 @@ const setTheme2 = () => {
   /* Default Buttons */
   cssVariables.setProperty('--btn-default', 'hsl(45, 7%, 89%)');
   cssVariables.setProperty('--btn-default-shadow', 'hsl(35, 11%, 61%)');
-  // cssVariables.setProperty('--btn-default-shadow', 'hsl(290, 70%, 36%)');
+
+
 
   /* Erase Buttons */
   cssVariables.setProperty('--btn-erase', 'hsl(185, 42%, 37%)');
@@ -92,6 +99,7 @@ const setTheme2 = () => {
   /* Equal Button */
   cssVariables.setProperty('--btn-equal', 'hsl(25, 98%, 40%)');
   cssVariables.setProperty('--btn-equal-shadow', ' hsl(25, 99%, 27%)');
+
 
   /* Button Color */
   cssVariables.setProperty('--btn-color', 'hsl(0, 0, 100%)');
@@ -134,3 +142,9 @@ const switchTheme = (theme) => {
       break;
   }
 };
+
+const $switchInput = document.querySelector('#switch');
+$switchInput.addEventListener('input', () => {
+  const theme = $switchInput.value;
+  switchTheme(theme);
+});
