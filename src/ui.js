@@ -1,4 +1,4 @@
-import { getClickedButton, controleButtonClick, calculate } from './utility.js';
+import { controleButtonClick, calculate } from './utility.js';
 
 const $calcBody = document.querySelector('#calc-body');
 const $calcVisor = document.querySelector('#visor-container__visor');
@@ -6,6 +6,13 @@ const $equalBtn = document.querySelector('#equal');
 const $deleteBtn = document.querySelector('#delete');
 const $resetBtn = document.querySelector('#reset');
 // export default writeVisor;
+
+const getClickedButton = (e) => {
+  const { target } = e;
+  const clickedButton = target.closest('.btn');
+  if (!clickedButton) return null;
+  return clickedButton;
+};
 
 $calcBody.addEventListener('click', (e) => {
   controleButtonClick(getClickedButton(e));
