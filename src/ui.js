@@ -51,9 +51,6 @@ $equalBtn.addEventListener('click', () => {
 
 const cssVariables = document.documentElement.style;
 
-// theme settings
-const cssVariables = document.documentElement.style;
-
 const setTheme1 = () => {
   cssVariables.setProperty('--main-bg', '');
   cssVariables.setProperty('--toggle-keypad-bg', '');
