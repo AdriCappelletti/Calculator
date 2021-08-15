@@ -51,11 +51,15 @@ $equalBtn.addEventListener('click', () => {
 
 const cssVariables = document.documentElement.style;
 
+// theme settings
+const cssVariables = document.documentElement.style;
+
 const setTheme1 = () => {
   cssVariables.setProperty('--main-bg', '');
   cssVariables.setProperty('--toggle-keypad-bg', '');
   cssVariables.setProperty('--visor-bg', '');
   cssVariables.setProperty('--header-text-color', '');
+
 
   /* Default Buttons */
   cssVariables.setProperty('--btn-default', '');
@@ -85,7 +89,8 @@ const setTheme2 = () => {
   /* Default Buttons */
   cssVariables.setProperty('--btn-default', 'hsl(45, 7%, 89%)');
   cssVariables.setProperty('--btn-default-shadow', 'hsl(35, 11%, 61%)');
-  // cssVariables.setProperty('--btn-default-shadow', 'hsl(290, 70%, 36%)');
+
+
 
   /* Erase Buttons */
   cssVariables.setProperty('--btn-erase', 'hsl(185, 42%, 37%)');
@@ -95,10 +100,12 @@ const setTheme2 = () => {
   cssVariables.setProperty('--btn-equal', 'hsl(25, 98%, 40%)');
   cssVariables.setProperty('--btn-equal-shadow', ' hsl(25, 99%, 27%)');
 
+
   /* Button Color */
   cssVariables.setProperty('--btn-color', 'hsl(0, 0, 100%)');
 };
 
+// setTheme2();
 const setTheme3 = () => {
   cssVariables.setProperty('--main-bg', 'hsl(268, 75%, 9%)');
   cssVariables.setProperty('--toggle-keypad-bg', ' hsl(268, 71%, 12%)');
