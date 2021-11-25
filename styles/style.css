@@ -27,7 +27,7 @@
   --btn-equal-shadow: hsl(6, 70%, 34%);
 
   /* Button Color */
-  --btn-default-color: hsl(0, 0%, 0%);
+  --btn-default-color: hsl(221, 14%, 31%);
   --btn-erase-color: hsl(0, 0%, 100%);
   --btn-equal-color: hsl(0, 0%, 100%);
 }
@@ -50,7 +50,6 @@ body {
   width: 100%;
   height: 100vh;
   display: flex;
-
   justify-content: center;
   align-items: center;
   /* height: 80vh; */
@@ -95,7 +94,7 @@ body {
 }
 
 #calc-body {
-  height: 70%;
+  /* height: 70%; */
   padding: 0.4em;
   display: grid;
   border-radius: 10px;
@@ -124,7 +123,7 @@ body {
   flex-grow: 1;
   font-family: "spartan", sans-serif;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2vw;
   border: none;
 }
 
@@ -251,7 +250,25 @@ input[type="range"]::-webkit-slider-thumb {
   text-align: center;
   justify-content: center;
   align-items: center;
+  padding: .5em;
+  color: hsl(0, 100%, 100%);
+  background-color: hsl(0, 0%, 0%) ;
+  margin-top: 4.5em;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: hsl(135, 100%, 51%);
+}
+
+
+@media screen and (max-width: 700px) {
+  #calc-container{
+    width: 90%;
+  }
+  .btn{
+    font-size: 6vw;
+  }
+  .attribution{
+    margin-top: 80px;
+  }
+
 }

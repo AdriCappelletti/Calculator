@@ -99,10 +99,10 @@ const setTheme2 = () => {
 
 
   /* Button Color */
-  cssVariables.setProperty('--btn-color', 'hsl(0, 0, 100%)');
+  cssVariables.setProperty('--btn-default-color', 'hsla(0, 0, 100%)');
 };
 
-// setTheme2();
+
 const setTheme3 = () => {
   cssVariables.setProperty('--main-bg', 'hsl(268, 75%, 9%)');
   cssVariables.setProperty('--toggle-keypad-bg', ' hsl(268, 71%, 12%)');
